@@ -1,0 +1,25 @@
+.header {
+    height: 150px;
+    width: 100%;
+    background-color: rgb(244, 246, 247);
+}
+
+.search {
+    width: 500px;
+    height: 40px;
+    text-align: center;
+    margin-left: 400px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgb(10, 10, 45),  0 0 7px rgb(63, 169, 235);
+   
+    
+}
+.word {
+    font-size: 40px; 
+    color: rgb(24, 24, 81); 
+    margin-top: 50px; 
+    margin-right: 290px; 
+    font-family: system-ui,'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow: hidden;
+text-shadow: 0 0 2px rgb(54, 54, 139),  0 0 3px rgb(63, 169, 235);
+}
