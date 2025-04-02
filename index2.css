@@ -1,25 +1,53 @@
-.header {
-    height: 150px;
-    width: 100%;
-    background-color: rgb(244, 246, 247);
-}
-
-.search {
-    width: 500px;
-    height: 40px;
-    text-align: center;
-    margin-left: 400px;
-    overflow: hidden;
-    box-shadow: 0 0 5px rgb(10, 10, 45),  0 0 7px rgb(63, 169, 235);
-   
-    
-}
-.word {
-    font-size: 40px; 
+body {
+background-color: whitesmoke;
+background-repeat: no-repeat;
+background-size: cover;
+  }
+  
+  .word {
+    font-weight: 800;
+    font-size: 38px; 
     color: rgb(24, 24, 81); 
-    margin-top: 50px; 
+    margin-top: 10px; 
+    margin-left: 80px;
     margin-right: 290px; 
     font-family: system-ui,'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     overflow: hidden;
-text-shadow: 0 0 2px rgb(54, 54, 139),  0 0 3px rgb(63, 169, 235);
+    text-shadow: 0 0 2px rgb(54, 54, 139),  0 0 3px rgb(63, 169, 235);
 }
+  h2 {
+    color: #333;
+  }
+  
+  .container {
+    max-width: 900px;
+  }
+  
+  .nav.nav-link {
+    font-weight: bold;
+  }
+  
+  .nav .nav-link {
+    color: #001f3f !important;
+    font-weight: bold;
+  }
+  
+  .nav .nav-link.active {
+    background-color: white !important;
+    color: #0a95c6 !important; 
+  }
+  
+ 
+  
+  .card img {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+
+  .book-container {
+    margin: auto;
+    width: 100%;
+  }
+
+ 

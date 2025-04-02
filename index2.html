@@ -1,25 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Management System</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./index1.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Management App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./index2.css">
 </head>
 <body>
-    <header class="header">
-<div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-    <div>
-        <img src="./Logo.jpg" alt="Logo"  style="clip-path: circle(50% at 50% 50%); object-fit: cover; height: 100px; width: 100px; margin-left: 50px; margin-top: 25px;">
+  <div class="container-fluid" style="border: 3px;">
+  <div class="book-container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="word " >
+        <img src="./images/Logo.jpg" alt="logo" style="width: 150px; height: 150px; clip-path: circle(50% at 50% 50%); object-fit: cover;">
+         BOOK MANAGEMENT SYSTEM</h2>
+    
+      <button class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#addBookModal"  style="width: 130px;">Add Book &hearts;</button> 
+      
     </div>
-    <div>
-        <h1 class="word"><b>BOOK MANAGEMENT SYSTEM</b></h1>
+
+      <input 
+        type="text" 
+        class="form-control mb-3 search-input  btn btn-outline-info" 
+        placeholder="Search Book "  style="width: 130px; margin-left: 1100px;"
+        onkeyup="searchForBooks(this)">
+
+
+        <ul class="nav " id="bookTabs">
+            <li class=" btn btn-outline-success nav-item"><a class=" nav-link" data-bs-toggle="tab" href="#allBooks">All Books</a></li><br>
+            <li class="  btn btn-outline-info nav-item"><a class=" nav-link" data-bs-toggle="tab" href="#favorites">Favorite Books</a></li><br>
+            <li class=" btn btn-outline-primary nav-item"><a class="nav-link" data-bs-toggle="tab" href="#unread">Unread Books</a></li><br>
+            <li class=" btn btn-outline-warning nav-item"><a class="nav-link" data-bs-toggle="tab" href="#read">Read Books</a></li><br>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content mt-3">
+          <div id="allBooks" class="tab-pane fade show active">
+              <div class="row" id="bookList"></div>
+          </div>
+          <div id="favorites" class="tab-pane fade">
+              <div class="row" id="favoriteList"></div>
+          </div>
+          <div id="unread" class="tab-pane fade">
+              <div class="row" id="unreadList"></div>
+          </div>
+          <div id="read" class="tab-pane fade">
+              <div class="row" id="readList"></div>
+          </div>
+        </div>
+
+      
+
+      <!-- Add/Edit Book Modal -->
+    <div class="modal fade" id="addBookModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Add Book</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+
+              <div class="modal-body">
+                  <form id="bookForm">
+                    <input type="hidden" id="bookId">
+                      <div class="mb-4">
+                          <label>Book Title</label>
+                          <input type="text" id="title" class="form-control" required>
+                      </div>
+                      <div class="mb-4">
+                          <label>Author's Name</label>
+                          <input type="text" id="author" class="form-control" required>
+                      </div>
+                      <div class="mb-4">
+                          <label>Isbn Number</label>
+                          <input type="number" id="isbn" class="form-control" required>
+                      </div>
+                      <div class="mb-4">
+                          <label>Book Status</label>
+                          <select id="status" class="form-control">
+                              <option value="Unread">Not read</option>
+                              <option value="Read">Read</option>
+                          </select>
+                      </div>
+                      <div class="mb-4">
+                          <label>Upload Book Cover Image</label><br><br><br>
+                          <input type="file" id="image" class="form-control">
+                      </div>
+                      <button type="submit" class="btn btn-success">Save</button>
+                  </form>
+                  
+              </div>
+          </div>
+      </div>
     </div>
+
+  </div>
+
+  <!--Bootstrap JS import-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./index2.js"></script>
 
 </div>
-    </header>
-<input type="text" placeholder="Search Books By Title" class="search">
-
 </body>
 </html>
