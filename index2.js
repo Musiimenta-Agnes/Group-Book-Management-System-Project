@@ -144,9 +144,9 @@ function createBookCard(book) {
   const card = document.createElement("div");
   card.className = "col-md-3 mb-3";
   card.innerHTML = `
-    <div class="card shadow-sm">
+    <div class="card shadow-sm" style = "height:100%";>
       <img src="${book.image || "cover-placeholder.jpg"}" class="card-img-top" alt="Book Cover">
-      <div class="card-body">
+      <div class="card-body" style = "background-color:rgb(112, 169, 86);">
           <h5 class="card-title">${book.title}</h5>
           <p class="card-text">Author: ${book.author}</p>
           <p class="card-text"><small>Isbn number: ${book.isbn}</small></p>
