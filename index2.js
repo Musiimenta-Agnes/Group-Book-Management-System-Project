@@ -144,7 +144,7 @@ function createBookCard(book) {
   const card = document.createElement("div");
   card.className = "col-md-3 mb-3";
   card.innerHTML = `
-    <div class="card shadow-sm" style = "height:100%";>
+    <div class="card shadow-sm  cards" style = "height:100%";>
       <img src="${book.image || "cover-placeholder.jpg"}" class="card-img-top" alt="Book Cover">
       <div class="card-body" style = "background-color:rgb(112, 169, 86);">
           <h5 class="card-title">${book.title}</h5>
@@ -153,7 +153,7 @@ function createBookCard(book) {
           <p class="card-text"><small> Book Status: ${book.status}</small></p>
             <button class="btn btn-sm btn-primary" onclick="openEditBookModal('${book.id}')">Edit Book</button><br><br>
           <button class="btn btn-sm ${book.favorite ? "btn-secondary" : "btn-secondary"}" onclick="toggleFavorite('${book.id}')">
-            ${book.favorite ? "Unfavorite" : "Favorite"}
+            ${book.favorite ? "Unfavorite" : "Mark Favorite"}
           </button><br><br>
           <button class="btn btn-sm btn-danger" onclick="deleteBook('${book.id}')">Delete Book</button><br><br>
         

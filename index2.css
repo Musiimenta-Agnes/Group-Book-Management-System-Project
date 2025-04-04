@@ -1,5 +1,5 @@
 body {
-background-color: whitesmoke;
+background-color: rgb(164, 162, 162);
 background-repeat: no-repeat;
 background-size: cover;
   }
@@ -52,3 +52,9 @@ background-size: cover;
   }
 
  
+  .cards:hover{
+    transition: transform 0.3s ease;
+  }
+  .cards {
+    transform: scale(1.0);
+  }
