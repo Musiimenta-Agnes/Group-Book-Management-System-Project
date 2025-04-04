@@ -1,7 +1,5 @@
 body {
 background-color: rgb(164, 162, 162);
-background-repeat: no-repeat;
-background-size: cover;
   }
   
   .word {
@@ -15,6 +13,7 @@ background-size: cover;
     font-family: system-ui,'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     overflow: hidden;
     text-shadow: 0 0 2px rgb(54, 54, 139),  0 0 3px rgb(63, 169, 235);
+    
 }
   h2 {
     color: #333;
