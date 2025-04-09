@@ -12,7 +12,7 @@ background-color: rgb(164, 162, 162);
     width: 100%;
     font-family: system-ui,'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     overflow: hidden;
-    text-shadow: 0 0 2px rgb(54, 54, 139),  0 0 3px rgb(63, 169, 235);
+    text-shadow: 0 0 5px rgb(54, 54, 139),  0 0 5px rgb(63, 169, 235);
     
 }
   h2 {
@@ -22,14 +22,12 @@ background-color: rgb(164, 162, 162);
   .container {
     max-width: 900px;
   }
-  
-  .nav.nav-link {
-    font-weight: bold;
-  }
+
   
   .nav .nav-link {
     color: #001f3f !important;
     font-weight: bold;
+   
   }
   
   .nav .nav-link.active {
@@ -57,3 +55,11 @@ background-color: rgb(164, 162, 162);
   .cards {
     transform: scale(1.0);
   }
+
+  
+
+
+  /* .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+  } */
