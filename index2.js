@@ -1,4 +1,4 @@
-// References to elements
+
 const bookForm = document.getElementById("bookForm");
 const bookList = document.getElementById("bookList");
 const favoriteList = document.getElementById("favoriteList");
@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("bookForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
-  // Input values
+
+  // Input the  values
   const bookId = document.getElementById("bookId").value.trim();
   const title = document.getElementById("title").value.trim();
   const author = document.getElementById("author").value.trim();
@@ -20,13 +21,17 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
   const status = document.getElementById("status").value;
   const imageInput = document.getElementById("image");
 
-  // Validate required values
+
+
+
+  // Validate required values in their order
   if (!title || !author || !isbn) {
     alert("All fields are required!");
     return;
   }
 
-  // Process the image if available
+
+  // Process the image 
   const imageFile = imageInput.files[0];
   if (imageFile) {
     const reader = new FileReader();
@@ -39,19 +44,21 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
   }
 });
 
-// Save or update book functionality
+
+
+// Save book functionality
 function saveBook(bookId, title, author, isbn, status, image) {
   let books = JSON.parse(localStorage.getItem("books")) || [];
 
   if (bookId) {
-    // Update existing book
+    // Update  the already existing book
     books = books.map(book =>
       book.id === bookId
         ? { ...book, title, author, isbn, status, image: image || book.image }
         : book
     );
   } else {
-    // Add new book
+    // Add new book at any time
     const newBook = {
       id: crypto.randomUUID(), 
       title,
@@ -64,7 +71,7 @@ function saveBook(bookId, title, author, isbn, status, image) {
     books.push(newBook);
   }
 
-  // Save to localStorage
+  // Save  book to localStorage
   localStorage.setItem("books", JSON.stringify(books));
   loadBooks();
 
@@ -74,7 +81,7 @@ function saveBook(bookId, title, author, isbn, status, image) {
   bootstrap.Modal.getInstance(document.getElementById("addBookModal")).hide();
 }
 
-// Open Edit Modal
+// Open Editbook Modal
 function openEditBookModal(bookId) {
   let books = JSON.parse(localStorage.getItem("books")) || [];
   let book = books.find(b => b.id === bookId);
@@ -84,7 +91,7 @@ function openEditBookModal(bookId) {
     return;
   }
 
-  // Open modal
+  // Open book modal
   let modalElement = document.getElementById("addBookModal");
   let modal = new bootstrap.Modal(modalElement);
   modal.show();
@@ -107,7 +114,7 @@ function openEditBookModal(bookId) {
 function loadBooks() {
   let books = JSON.parse(localStorage.getItem("books")) || [];
 
-  // Clear the lists
+  // Clear the lists after submission of book credentials
   bookList.innerHTML = "";
   favoriteList.innerHTML = "";
   unreadList.innerHTML = "";
@@ -116,7 +123,7 @@ function loadBooks() {
   books.forEach((book) => {
     const bookCard = createBookCard(book);
 
-    // Append to correct tab
+    // Append to  the correct tab
     bookList.appendChild(bookCard);
     if (book.favorite) favoriteList.appendChild(createBookCard(book));
     if (book.status === "Unread") unreadList.appendChild(createBookCard(book));
@@ -139,7 +146,7 @@ function toggleFavorite(bookId) {
   loadBooks();
 }
 
-// Create book card
+// Create the  book card
 function createBookCard(book) {
   const card = document.createElement("div");
   card.className = "col-md-3 mb-3";
@@ -182,7 +189,8 @@ function searchForBooks(input) {
     book.author.toLowerCase().includes(query)
   );
 
-  // Clear and update book list with search results
+
+  // Clear and update book list with the search results
   let bookList = document.getElementById("bookList"); 
   bookList.innerHTML = ""; // Clear current list
 
